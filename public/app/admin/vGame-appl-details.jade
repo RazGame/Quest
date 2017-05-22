@@ -1,0 +1,24 @@
+.container
+  .panel.panel-primary
+    .panel-heading Game Application Info
+    .panel-body
+      h1 id: {{gameAppl._id}}
+      h3 signed: {{gameAppl.signed | date}}
+  .panel.panel-primary
+    .panel-heading Game Info
+    .panel-body
+      p id: {{gameAppl.gameParent._id}}
+      p game title: {{gameAppl.gameParent.title}}
+      p featured: {{gameAppl.gameParent.featured}}
+      p published: {{gameAppl.gameParent.published | date:'medium'}}
+      p Tags:&nbsp
+        span(ng-repeat="tag in gameAppl.gameParent.tags"){{tag}} &nbsp
+  .panel.panel-primary
+    .panel-heading User Info
+    .panel-body
+      p id: {{gameAppl.userParent._id}}
+      p first name: {{gameAppl.userParent.firstName}}
+      p last name: {{gameAppl.userParent.lastName}}
+      p username: {{gameAppl.userParent.username}}
+      p Roles:&nbsp
+        span(ng-repeat="role in gameAppl.userParent.roles"){{role}} &nbsp
