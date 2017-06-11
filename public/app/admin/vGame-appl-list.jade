@@ -8,6 +8,6 @@
     tbody
       tr(ng-repeat="gameAppl in gameAppls")
         td
-          a(href="/admin/game-appls/{{gameAppl._id}}") {{gameAppl._id}}
+          a(href="/game/game-appls/{{gameAppl._id}}") {{gameAppl._id}}
         td {{gameAppl.signed | date}}
         td {{gameAppl.gameParent.title}}

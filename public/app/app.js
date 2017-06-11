@@ -1,4 +1,4 @@
-angular.module('app', ['ngResource', 'ngRoute', 'restangular']);
+    angular.module('app', ['ngResource', 'ngRoute', 'restangular']);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
     var routeRoleChecks = {
@@ -23,16 +23,19 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         .when('/admin/users', {
             templateUrl: '/partials/admin/vUser-list',
             controller: 'msUserListCtrl', resolve: routeRoleChecks.admin
-        }).when('/admin/addGame', {
-        templateUrl: '/partials/admin/vGame-create',
-        controller: 'msGameCreateCtrl', resolve: routeRoleChecks.admin
-    }).when('/admin/game-appls', {
-        templateUrl: '/partials/admin/vGame-appl-list',
-        controller: 'msGameApplListCtrl', resolve: routeRoleChecks.admin
-    }).when('/admin/game-appls/:id', {
-        templateUrl: '/partials/admin/vGame-appl-details',
-        controller: 'msGameApplDetailCtrl', resolve: routeRoleChecks.admin
-    })
+        })
+        .when('/admin/addGame', {
+            templateUrl: '/partials/admin/vGame-create',
+            controller: 'msGameCreateCtrl', resolve: routeRoleChecks.admin
+        })
+        .when('/game/game-appls-list/:id', {
+            templateUrl: '/partials/admin/vGame-appl-list',
+            controller: 'msGameApplListCtrl'
+        })
+        .when('/game/game-appls/:id', {
+            templateUrl: '/partials/admin/vGame-appl-details',
+            controller: 'msGameApplDetailCtrl'
+        })
         .when('/signup', {
             templateUrl: '/partials/account/vSignup',
             controller: 'msSignupCtrl'

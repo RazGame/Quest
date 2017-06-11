@@ -17,10 +17,10 @@
         .panel-heading Информация от автора
         .panel-body
           p.card-text {{game.description}}
-          a(href="/game/game-appls-list/{{game._id}}") Show Participants
+          a(href="/games/{{game._id}}/game-appls") Show Participants
 
 
   .panel.panel-primary
     .panel-heading Участники
     .panel-body
-      div(ng-repeat="gameAppl in gameAppls") {{gameAppl.userFirst}} {{gameAppl.lastName}} signed: {{gameAppl.signed | date:'medium'}}
+      div(ng-repeat="GameAppl in GameAppls") {{GameAppl.userFirst}} {{GameAppl.lastName}} signed: {{GameAppl.signed | date:'medium'}}
