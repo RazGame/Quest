@@ -5,6 +5,7 @@ var User = require('mongoose').model('User');
 exports.getGameAppls = function (req, res) {
   GameAppl.find({})
     .populate("gameParent")
+	.populate("userParent")
     .exec(function (err, gameAppls) {
     res.send(gameAppls);
   });

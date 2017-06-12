@@ -12,15 +12,17 @@
           p.card-text Призовой фонд: {{game.deposit}}р
           button.btn.btn-primary(ng-click="signToGame()", ) Подать заявку
 
+
     .col-md-8
       .panel.panel-primary
         .panel-heading Информация от автора
         .panel-body
           p.card-text {{game.description}}
-          a(href="/game/game-appls-list/{{game._id}}") Show Participants
+          a(href="/game/game-appls-list/{{game._id}}") Посмотреть участников
 
 
-  .panel.panel-primary
-    .panel-heading Участники
-    .panel-body
-      div(ng-repeat="gameAppl in gameAppls") {{gameAppl.userFirst}} {{gameAppl.lastName}} signed: {{gameAppl.signed | date:'medium'}}
+
+  //.panel.panel-primary
+  //  .panel-heading Участники
+  //  .panel-body
+  //    div(ng-repeat="gameAppl in gameAppls") {{gameAppl.userFirst}} {{gameAppl.lastName}} signed: {{gameAppl.signed | date:'medium'}}
