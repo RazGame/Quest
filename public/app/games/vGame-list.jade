@@ -13,6 +13,7 @@
         th Дата начала
         th Дата окончания
         th Взнос
+        th Редактирование
     tbody
       tr(ng-repeat="game in games | filter:searchText | orderBy:sortOrder")
         td
@@ -21,3 +22,5 @@
         td {{game.dateofstart}}
         td {{game.dateofend}}
         td {{game.deposit}}
+        td
+          a(href="/games/{{game._id}}/gameEditor") Изменить игру

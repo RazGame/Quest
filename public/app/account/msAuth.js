@@ -4,9 +4,7 @@ angular.module('app').factory('msAuth', function($http, msIdentity, $q, msUser) 
       var dfd = $q.defer();
       $http.post('/login', {username:username, password:password}).then(function(response) {
         if(response.data.success) {
-          // resource bo tam pridavam isAdmin metodu
           var user = new msUser();
-          // rozsirim user obj o tu metodu
           angular.extend(user, response.data.user);
           msIdentity.currentUser = user;
           dfd.resolve(true);
@@ -32,7 +30,6 @@ angular.module('app').factory('msAuth', function($http, msIdentity, $q, msUser) 
 
     updateCurrentUser: function(newUserData) {
       var dfd = $q.defer();
-
       var clone = angular.copy(msIdentity.currentUser);
       angular.extend(clone, newUserData);
       clone.$update().then(function() {

@@ -28,6 +28,10 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/admin/vGame-create',
             controller: 'msGameCreateCtrl', resolve: routeRoleChecks.admin
         })
+        .when('/games/:id/gameEditor', {
+            templateUrl: '/partials/games/vGame-editor',
+            controller: 'msGameEditor', resolve: routeRoleChecks.admin
+        })
         .when('/game/game-appls-list/:id', {
             templateUrl: '/partials/admin/vGame-appl-list',
             controller: 'msGameApplListCtrl'

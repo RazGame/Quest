@@ -34,6 +34,17 @@ exports.createGame = function (req, res, next) {
   });
 };
 
+exports.updateGame = function(req, res) {
+    var gameUpdates = req.body;
+    req.game.title = gameUpdates.title;
+    req.game.description = gameUpdates.description;
+
+    req.game.save(function(err) {
+        if(err) { res.status(400); return res.send({reason:err.toString()});}
+        res.send(req.game);
+    });
+};
+
 exports.deleteGame = function (req, res, next) {
   // todo
 };

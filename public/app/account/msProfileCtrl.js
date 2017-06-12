@@ -18,7 +18,7 @@ angular.module('app').controller('msProfileCtrl', function ($scope, msAuth, msId
     }
 
     msAuth.updateCurrentUser(newUserData).then(function () {
-      msNotifier.notify('Your user account has been updated');
+      msNotifier.notify('Ваш профиль обновлён');
     }, function (reason) {
       msNotifier.error(reason);
     });
