@@ -12,6 +12,18 @@
           .col-md-10
             input.form-control(name="description", type="text", placeholder="Описание", ng-model="game.description", required)
         .form-group
+          label.col-md-2.control-label(for="prize") Приз
+          .col-md-10
+            input.form-control(name="description", type="text", placeholder="Описание", ng-model="game.prize", required)
+        .form-group
+          label.col-md-2.control-label(for="deposit") Взнос
+          .col-md-10
+            input.form-control(name="description", type="text", placeholder="Описание", ng-model="game.deposit", required)
+        .form-group
+          label.col-md-2.control-label(for="city") Город
+          .col-md-10
+            input.form-control(name="description", type="text", placeholder="Описание", ng-model="game.city", required)
+        .form-group
           .col-md-10.col-md-offset-2
             .pull-right
               button.btn.btn-primary(ng-click="update()") Сохранить

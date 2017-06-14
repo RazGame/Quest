@@ -36,17 +36,23 @@ exports.createGame = function (req, res, next) {
 
 exports.updateGame = function(req, res) {
     var gameUpdates = req.body;
-    req.game.title = gameUpdates.title;
-    req.game.description = gameUpdates.description;
 
-    req.game.save(function(err) {
+    Game.update({_id: gameUpdates._id}, {$set: gameUpdates}, function(err) {
         if(err) { res.status(400); return res.send({reason:err.toString()});}
-        res.send(req.game);
+        res.send(200);
     });
 };
 
 exports.deleteGame = function (req, res, next) {
-  // todo
+    var gameId = req.params.id;
+
+    Game.findByIdAndRemove(gameId, function(err) {
+      if(err){
+        res.status(500).send(err);
+        return;
+      }
+      res.send(200);
+    });
 };
 
 
